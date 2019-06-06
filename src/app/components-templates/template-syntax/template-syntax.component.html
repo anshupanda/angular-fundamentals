@@ -3,7 +3,8 @@
 
 <h3>
   <img id="heroImg" src="{{heroImageUrl}}" style="height:50px">
-  <img id="heroImg" src="./assets/images/hero.jpg" style="height:50px">
+  <img id="heroImg2" src="./assets/images/hero.jpg" style="height:50px">
+  <img id="heroImg3" src="../../../assets/images/hero.jpg" style="height:50px">
 </h3>
 
 <p>The sum of 1 + 1 is {{1 + 1}}</p>
@@ -93,7 +94,7 @@
 <br>
 
 <h6>Class bindings</h6>
-<div>I. Reset/override all class names with a binding</div>
+<div>I. Reset/override all class names with class property binding</div>
 <div class="bad curly special" [class]="badCurly">Bad curly</div>
 <br>
 
@@ -154,7 +155,7 @@
 <br>
 <hr>
 <h6><b>Template reference variables ( #hero )</b></h6>
-<form (ngSubmit)="onSubmit(heroForm)" ngForm #heroForm="ngForm">
+<form (ngSubmit)="onSubmit(heroForm)" ngForm #heroForm="ngForm" id="hero-form">
   <div class="form-group">
     <label for="name">Phone: {{ phoneRef.value }}
       <input class="form-control" id="phone" name="phone" #phoneRef [(ngModel)]="phone">
