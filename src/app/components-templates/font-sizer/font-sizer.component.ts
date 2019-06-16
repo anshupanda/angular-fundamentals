@@ -7,14 +7,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FontSizerComponent {
 
-  @Input()  size: number | string;
+  @Input()  size: number;
   @Output() sizeChange = new EventEmitter<number>();
  
-  dec() { this.resize(-1); }
-  inc() { this.resize(+1); }
- 
-  resize(delta: number) {
-    this.size = Math.min(40, Math.max(8, +this.size + delta));
+  dec() { 
+    this.size--;
+    this.sizeChange.emit(this.size);
+  }
+
+  inc() { 
+    this.size++;
     this.sizeChange.emit(this.size);
   }
 
