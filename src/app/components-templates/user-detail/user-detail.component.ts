@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, ContentChild, AfterContentInit } from '@angular/core';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { EditUserComponent } from '../edit-user/edit-user.component';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })
-export class UserDetailComponent implements OnInit, AfterContentChecked {
+export class UserDetailComponent implements OnInit, AfterContentInit {
 
   constructor() { }
 
@@ -18,10 +18,11 @@ export class UserDetailComponent implements OnInit, AfterContentChecked {
     age: 25
   };
 
-  @ContentChild(EditUserComponent) editUserContent: EditUserComponent;
+  @ContentChild(EditUserComponent) 
+  editUserContent: EditUserComponent;
 
-  ngAfterContentChecked() {
-    console.log(this.editUserContent.user.name);
+  ngAfterContentInit() {
+    console.log(this.editUserContent.version);
   }
 
 }
