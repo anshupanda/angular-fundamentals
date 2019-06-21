@@ -26,13 +26,13 @@ export class UserAfterViewDetailComponent implements OnInit, DoCheck, AfterViewI
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit");
+    console.log("ngAfterViewInit Called...!");
     console.log(this.editUserView.user.name);
     console.log(this.editUserView.user.age);
   }
 
   ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
+    console.log("ngAfterViewChecked Called...!");
     console.log(this.editUserView.user.name);
     console.log(this.editUserView.user.age);
   }
