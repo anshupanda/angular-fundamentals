@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-styles-demo',
@@ -19,6 +19,10 @@ export class StylesDemoComponent implements OnInit {
 
   @HostBinding('class') get themeClass() {
     return 'theme-light';
+  }
+
+  @HostListener('mouseenter') onmouseenter(){
+    console.log('mouse entered on styles demo component');
   }
 
 }
