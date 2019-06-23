@@ -17,6 +17,7 @@ export class UserCycleComponent implements OnInit, OnDestroy, OnChanges, DoCheck
     console.log("2. Component OnChanges");
     console.log('Input properties first available in ngOnChanges');
     console.log(changes);
+    console.log(this.user);
   }
 
   ngOnInit() {
