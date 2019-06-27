@@ -19,8 +19,6 @@
 
 <br>
 <h6>Pure Pipes</h6>
-
-<br>
 <div>Heroes without pipe(All Heroes)</div>
 <ul>
   <li *ngFor="let hero of heroes">{{ hero.name }}</li>
@@ -44,7 +42,7 @@
 
 <div>Heroes with flyingHeroesPure pipe</div>
 <ul>
-  <li *ngFor="let hero of (heroes | flyingHeroesPure)">{{ hero.name }}</li>
+  <li *ngFor="let hero of canFlyHeros">{{ hero.name }}</li>
 </ul>
 
 <br>
