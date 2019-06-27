@@ -43,7 +43,7 @@ export class ObservablesDemoComponent implements OnInit {
     );
 
     /***** ajax *****/
-    let todosUrl = 'http://localhost:3000/todos';
+    let todosUrl = 'https://todos-api-dev.herokuapp.com/todos';
     const todoObservable = ajax(todosUrl);
 
     todoObservable.subscribe(
@@ -122,7 +122,6 @@ export class ObservablesDemoComponent implements OnInit {
       } catch(err) {
         observer.error(err);
       }
-      
     });
 
     customObservable3.subscribe(
@@ -149,9 +148,4 @@ export class ObservablesDemoComponent implements OnInit {
     });// subscribe method with next, error, complete methods in an object    
 
   }
-
-  
-
-
-
 }
