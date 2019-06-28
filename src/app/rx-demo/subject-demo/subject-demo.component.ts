@@ -76,11 +76,11 @@ export class SubjectDemoComponent implements OnInit {
     let namesSubject: Subject<string> = new Subject<string>();
 
     namesSubject.subscribe(n => {
-      this.namesSubjectLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer1: ${n}`)
+      this.namesSubjectLogs.push(`Observer1: ${n}`)
     }); // Subscriber 1
 
     namesSubject.subscribe(n => {
-      this.namesSubjectLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer2: ${n}`)
+      this.namesSubjectLogs.push(`Observer2: ${n}`)
     }); // Subscriber 2
 
     let namesObservable: Observable<string> = from(names);
