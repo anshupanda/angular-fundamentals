@@ -161,7 +161,7 @@ export class DifferentOperatorsComponent implements OnInit {
     /******* takeUntil operator *********/
     const source$ = interval(1000);
     //after 5 seconds, emit value
-    const timer$ = timer(5000);
+    const timer$ = interval(5000);
     //when timer emits after 5s, complete source$
     source$.pipe(takeUntil(timer$)).subscribe(val => this.takeUntilLogs.push(val));
 
@@ -181,7 +181,7 @@ export class DifferentOperatorsComponent implements OnInit {
     ).subscribe();
 
     /******* retry & catchError operator *********/
-    const apiData = ajax('http://localhost:3000/todos/100').pipe(
+    const apiData = ajax('https://todos-api-dev.herokuapp.com/todos').pipe(
       retry(3),  
       map(res => {
         if (!res.response) {
