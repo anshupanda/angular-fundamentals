@@ -44,8 +44,6 @@ export class DifferentOperatorsComponent implements OnInit {
   takeUntilLogs: Array<number> = [];
   bufferTimeLogs: Array<Array<number>> = [];
 
-
-
   constructor() { }
 
   ngOnInit() {
