@@ -81,6 +81,13 @@ export class DifferentOperatorsComponent implements OnInit {
 
     combined$.subscribe(val => this.combineLatestLogs.push(val));
 
+    /******* merge operator *********/
+    let merged$ = observable1$.pipe(
+      merge(observable2$)
+    );
+
+    merged$.subscribe(val => this.mergeLogs.push(val));
+
     /******* concat operator *********/
     let nums1$ = of(1,2,3);
     let nums2$ = of(4,5,6);
@@ -89,13 +96,6 @@ export class DifferentOperatorsComponent implements OnInit {
     );
 
     concatinated$.subscribe(val => this.concatLogs.push(val));
-
-    /******* merge operator *********/
-    let merged$ = observable1$.pipe(
-      merge(observable2$)
-    );
-
-    merged$.subscribe(val => this.mergeLogs.push(val));
 
     /******* startWith operator *********/
     let nums3$ = of(1,2,3);
