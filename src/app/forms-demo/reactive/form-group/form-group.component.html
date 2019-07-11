@@ -12,3 +12,6 @@
 
   <button type="submit" [disabled]="!profileFormGroup.valid">Submit</button>
 </form>
+
+<br><br>
+{{ profileFormGroup.value | json }}

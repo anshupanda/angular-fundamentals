@@ -26,6 +26,7 @@ export class SuperHeroComponent implements OnInit {
     console.log(heroForm.valid);
     console.log(heroForm.controls);
     console.log(heroForm.controls.name.value);
+    console.log(heroForm.value);
   }
 
 }

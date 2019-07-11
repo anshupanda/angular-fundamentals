@@ -32,6 +32,7 @@ export class FormArrayComponent implements OnInit {
   });
 
   get aliases() {
+    console.log(this.profileFormGroup.get('aliases'));
     return this.profileFormGroup.get('aliases') as FormArray;
   }
 
