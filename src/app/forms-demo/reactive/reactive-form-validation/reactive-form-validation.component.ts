@@ -31,7 +31,7 @@ export class ReactiveFormValidationComponent implements OnInit {
       'power': ['', Validators.required],
       'email': ['', [Validators.required, Validators.email]],
       'seconderyEmail': ['', [Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
-      'available': ['', Validators.required],
+      'available': ['yes', Validators.required],
       'nickName': ['', [Validators.required, forbiddenNameValidator(['Bob', 'Tim', 'Tommy'])]],
       'userName': ['', [Validators.required], this.uniqueUserNameValidator.validate.bind(this.uniqueUserNameValidator)],
       'vehicles': this.buildVehicleCheckBoxControls(),
