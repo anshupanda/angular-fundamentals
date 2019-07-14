@@ -38,7 +38,8 @@ export class ReactiveFormValidationComponent implements OnInit {
     });
 
     this.heroFormGroup.valueChanges.subscribe(changesObj => {
-      console.log(this.heroFormGroup.get('vehicles'));
+      console.log(changesObj);
+      // console.log(this.heroFormGroup.get('vehicles'));
     });
   }
 
