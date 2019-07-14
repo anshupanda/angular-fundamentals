@@ -1,10 +1,10 @@
 <div class="container">
   <h1>Hero Form</h1>
-  <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+  <form (ngSubmit)="onSubmit(heroForm)" ngForm #heroForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" [(ngModel)]="hero.name" name="name" #name="ngModel" required>
-      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      <div *ngIf="name.invalid && name.touched" class="alert alert-danger">
         Name is required
       </div>
       <div>value: {{ name.value }}</div>
@@ -28,7 +28,7 @@
         <option value="">Select Power</option>
         <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
       </select>
-      <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+      <div *ngIf="power.invalid && power.touched" class="alert alert-danger">
         Power is required
       </div>
     </div>
