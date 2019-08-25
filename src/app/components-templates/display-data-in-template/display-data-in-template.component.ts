@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-display-data-in-template',
   template: `
-    <h1>{{title}}</h1>
-    <h2>My favorite hero is: {{myHero}}</h2>
+    <h4>{{title}}</h4>
+    <h4>My favorite hero is: {{myHero}}</h4>
   `,
   styleUrls: ['./display-data-in-template.component.css']
 })
