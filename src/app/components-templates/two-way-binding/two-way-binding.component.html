@@ -1,19 +1,4 @@
-<label [style.font-size.px]="fontSize">FontSize: {{fontSize}}px</label>
-<br>
-<div>Two way data binding with separate property and event binding:</div>
-<app-font-sizer [size]="fontSize" (sizeChange)="fontSize=$event"></app-font-sizer>
-
-<br>
-<div>Two way data binding with [( ... )]</div>
-<app-font-sizer [(size)]="fontSize"></app-font-sizer>
-
-<br>
-<div>Two way data binding with 'bindon-'</div>
-<app-font-sizer bindon-size="fontSize"></app-font-sizer>
-
-<br>
-<hr>
-<h6><b>NgModel Directive</b></h6>
+<h6><b>Two way data binding without using NgModel Directive</b></h6>
 <div>Two way data binding on form elements, using property and event binding:</div>
 <div>Current hero name is: {{ currentHero.name }}</div>
 <input [value]="currentHero.name" (input)="currentHero.name=$event.target.value" >
@@ -31,8 +16,12 @@
 </div>
 
 <br>
-<h6>Two way data binding using NgModel</h6>
+<h6><b>Two way data binding using NgModel Directive</b></h6>
 <input [(ngModel)]="currentHero.name">
+
+<br><br>
+<h6>Two way data binding using bindon syntax</h6>
+<input bindon-ngModel="currentHero.name">
 
 <br><br>
 <div>NgModel - Splitted into property and Event binding</div>

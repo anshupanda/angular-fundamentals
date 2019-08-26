@@ -5,20 +5,16 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 })
 export class ReverseIfDirective {
 
-  private hasView = false;
-
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
   ) { }
 
   @Input() set appReverseIf(condition: boolean) {
-    if (!condition && !this.hasView) {
+    if (!condition) {
       this.viewContainer.createEmbeddedView(this.templateRef);
-      this.hasView = true;
-    } else if (condition && this.hasView) {
+    } else {
       this.viewContainer.clear();
-      this.hasView = false;
     }
   }
 

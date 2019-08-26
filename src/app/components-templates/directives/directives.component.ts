@@ -20,7 +20,7 @@ export class DirectivesComponent implements OnInit {
 
   nullHero = null;  
 
-  heroes = [{"id":1,"name":"Vyky","power":2612},
+  heroes = [{"id":1,"name":"John","power":2612},
   {"id":2,"name":"Vernice","power":7036},
   {"id":3,"name":"Chrissie","power":3331},
   {"id":4,"name":"Tana","power":5158},
