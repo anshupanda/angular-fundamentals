@@ -21,12 +21,14 @@
 <br />
 
 <img [src]="heroImageUrl" style="height:50px" />
+<img bind-src="heroImageUrl" style="height:50px" />
 <br /><br />
 
 <button [disabled]="formNotChanged">Cancel</button>
 <br /><br />
 
 <app-hero-detail [hero]="currentHero"></app-hero-detail>
+<app-hero-detail hero="{{currentHero}}"></app-hero-detail> 
 <br />
 <button (click)="updateHero()">Update Hero</button>
 <br /><br />
@@ -126,7 +128,8 @@
 <br>
 <hr>
 <h6><b>Event Binding</b></h6>
-<button (click)="onSave($event)">Save</button>
+<button (click)="onSave($event)">Save</button> <br><br>
+<button on-click="onSave($event)">Save</button>
 <br><br>
 <input type="text" (keypress)="onSave($event)"/>
 
