@@ -2,6 +2,7 @@
 <div>Two way data binding on form elements, using property and event binding:</div>
 <div>Current hero name is: {{ currentHero.name }}</div>
 <input [value]="currentHero.name" (input)="currentHero.name=$event.target.value" >
+<br><br><button (click)="checkHeroName()">check hero name</button>
 
 <br>
 <br>

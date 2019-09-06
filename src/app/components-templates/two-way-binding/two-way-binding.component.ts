@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoWayBindingComponent implements OnInit {
 
-  fontSize:number = 12;
-
   currentHero = {
     name: 'John Doe'
   };
@@ -20,6 +18,14 @@ export class TwoWayBindingComponent implements OnInit {
 
   setUpperCase(value) {
     this.currentHero.name = value.toUpperCase();
+  }
+
+  printEvent(e) {
+    console.log(e);
+  }
+
+  checkHeroName() {
+    console.log(this.currentHero.name);
   }
 
 }
