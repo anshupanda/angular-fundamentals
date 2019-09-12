@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { TodoTrackerService } from './todo-tracker.service';
 
@@ -12,13 +13,12 @@ export class SimpleTodoComponent implements OnInit {
 
   userActions = [];
 
-  constructor(private tracker: TodoTrackerService) {
+  constructor(public tracker: TodoTrackerService) {}
+
+  ngOnInit() {
     this.tracker.todoObservable$.subscribe(todoAction => {
       this.userActions.push(todoAction);
     });
-  }
-
-  ngOnInit() {
   }
 
   todos = [
