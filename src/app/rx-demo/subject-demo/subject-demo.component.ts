@@ -19,6 +19,7 @@ export class SubjectDemoComponent implements OnInit {
 
   constructor(public subjectsDemoService: SubjectsDemoService) { }
 
+  initTime: number;
   observableLogs: string[] = [];
   subjectLogs: string[] = [];
   subjectObservableLogs: string[] = [];
@@ -29,46 +30,44 @@ export class SubjectDemoComponent implements OnInit {
   asyncSubjectLogs: string[] = [];
 
   ngOnInit() {
-    let initTime = Date.now(); //Returns timestamp
+    this.initTime = Date.now(); //Returns timestamp
     
     /******** Observable subscribers ********/
     this.subjectsDemoService.numbersObservable$.subscribe(n => {
-      this.observableLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer1: ${n}`)
+      this.observableLogs.push(`At ${this.getTimeDifference()} seconds: Observer1: ${n}`)
     }); // Subscriber 1
 
     setTimeout(() => {
       this.subjectsDemoService.numbersObservable$.subscribe(n => {
-        this.observableLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer2: ${n}`)
+        this.observableLogs.push(`At ${this.getTimeDifference()} seconds: Observer2: ${n}`)
       });
     }, 1500); // Subscriber 2
 
 
     /******** Subject subscribers ********/    
     this.subjectsDemoService.numbersSubject.subscribe(n => {
-      this.subjectLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer1: ${n}`)
+      this.subjectLogs.push(`At ${this.getTimeDifference()} seconds: Observer1: ${n}`)
     }); // Subscriber 1
 
     
     setTimeout(() => {
       this.subjectsDemoService.numbersSubject.subscribe(n => {
-        this.subjectLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer2: ${n}`)
+        this.subjectLogs.push(`At ${this.getTimeDifference()} seconds: Observer2: ${n}`)
       });
     }, 1500); // Subscriber 2
 
 
     /******** Observable created from subject subscribers ********/        
     this.subjectsDemoService.numbersSubjectObservable$.subscribe(n => {
-      this.subjectObservableLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer1: ${n}`)
+      this.subjectObservableLogs.push(`At ${this.getTimeDifference()} seconds: Observer1: ${n}`)
     }); // Subscriber 1
 
     
     setTimeout(() => {
       this.subjectsDemoService.numbersSubjectObservable$.subscribe(n => {
-        this.subjectObservableLogs.push(`At ${((Date.now() - initTime) / 1000).toFixed(1)} seconds: Observer2: ${n}`)
+        this.subjectObservableLogs.push(`At ${this.getTimeDifference()} seconds: Observer2: ${n}`)
       });
     }, 1500); // Subscriber 2
-
-
     
     /******** 3. Subject as both observable and observer ********/    
     let names: Array<string> = ['John', 'Andy', 'Benziman'];
@@ -160,6 +159,10 @@ export class SubjectDemoComponent implements OnInit {
     asyncSubject.complete();
     
 
+  }
+
+  private getTimeDifference() {
+    return ((Date.now() - this.initTime) / 1000).toFixed(1);
   }
 
 }
