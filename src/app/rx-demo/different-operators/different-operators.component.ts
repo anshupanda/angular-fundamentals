@@ -67,14 +67,12 @@ export class DifferentOperatorsComponent implements OnInit {
     /******* combineLatest operator *********/
     let observable1$ = interval(1000);
     let observable2$ = interval(1500);
-    let observable3$ = interval(1500);
 
     let combined$ = observable1$.pipe(
       combineLatest(
         observable2$,
-        observable3$,
-        (val1, val2, val3) => {
-          return `${val1} - ${val2} - ${val3}`
+        (val1, val2) => {
+          return `${val1} - ${val2}`
         }
       )
     );
