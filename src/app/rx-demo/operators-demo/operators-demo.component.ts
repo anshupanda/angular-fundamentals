@@ -24,6 +24,8 @@ export class OperatorsDemoComponent implements OnInit {
     /********* Applying map and filter operators ***********/
     let oddFilterFunc = filter((val: number) => val%2 !== 0);
     let oddFiltered$ = oddFilterFunc(numbersObservable);
+
+    oddFiltered$.subscribe(value => console.log('filter output', value));
     
     let squareMapFunc = map((val: number) => val * val);
     let oddSquaredNumbers$ = squareMapFunc(oddFiltered$);
