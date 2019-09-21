@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { of, interval, fromEvent, from, timer } from 'rxjs';
+import { of, interval, fromEvent, from } from 'rxjs';
 import {  map, 
           filter, 
           combineLatest, 
