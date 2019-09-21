@@ -71,6 +71,10 @@ const appRoutes: Routes = [
   { path: 'customers', loadChildren: './customers/customers.module#CustomersModule' },
   { path: 'orders', loadChildren: './orders/orders.module#OrdersModule' },
 
+  /* Angular 8 lazy loading syntax */
+  /* { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)},
+  { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)}, */
+
   /* Eager Vs Lazy loading demo routes */
   { path: 'ngmodules/eager-vs-lazy-loading', component: EagerVsLazyLoadingComponent },
   { path: 'ngmodules/eager-vs-lazy-loading/counter-one-home', component: CounterOneHomeComponent },
