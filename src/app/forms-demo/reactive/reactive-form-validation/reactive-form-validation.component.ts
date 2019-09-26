@@ -13,7 +13,7 @@ export class ReactiveFormValidationComponent implements OnInit {
   
   constructor(private fb: FormBuilder, private uniqueUserNameValidator: UniqueUserNameValidator) { }
 
-  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer', 'Honest'];
 
   vehiclesArr = [
     {label:"Two Wheeler", value: 'two-wheeler', selected: false},

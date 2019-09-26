@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormValidationComponent implements OnInit {
 
-  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer', 'Honest'];
 
   vehiclesArr = [
     {label:"Two Wheeler", value: 'two-wheeler', selected: false},
