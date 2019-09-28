@@ -47,6 +47,7 @@
     <div class="form-group">
       <label for="power">Hero Power</label>
       <select id="power" class="form-control" formControlName="power">
+        <option value="">Select hero power</option>
         <option *ngFor="let p of powers" [value]="p">{{p}}</option>
       </select>
 
