@@ -115,6 +115,7 @@ export class ObservablesDemoComponent implements OnInit {
         observer.next(111);
         observer.next(222);
         observer.next(333);
+        throw new Error('some error');
         setTimeout(() => {
           observer.next(444);
           observer.complete();

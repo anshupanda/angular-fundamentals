@@ -10,15 +10,16 @@ export class UserAfterContentDetailComponent implements OnInit, AfterContentInit
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  user = {
+    user = {
     name: 'John',
     age: 25
   };
 
   @ContentChild(EditUserComponent) editUserContent: EditUserComponent;
+
+  ngOnInit() {
+    // console.log(this.editUserContent.user.name);
+  }
 
   ngAfterContentInit() {
     console.log("ngAfterContentInit");
