@@ -116,10 +116,6 @@ export class ObservablesDemoComponent implements OnInit {
         observer.next(222);
         observer.next(333);
         throw new Error('some error');
-        setTimeout(() => {
-          observer.next(444);
-          observer.complete();
-        }, 1000);
       } catch(err) {
         observer.error(err);
       }
