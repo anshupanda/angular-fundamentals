@@ -171,7 +171,7 @@ export class DifferentOperatorsComponent implements OnInit {
 
     /******* tap operator *********/    
     const source3$ = of(1, 2, 3, 4, 5);
-    //transparently log values from source with 'do'
+    //transparently log values from source
     source3$.pipe(
       tap(val => console.log(`BEFORE MAP: ${val}`)),
       map(val => val + 10),
@@ -179,7 +179,7 @@ export class DifferentOperatorsComponent implements OnInit {
     ).subscribe();
 
     /******* retry & catchError operator *********/
-    const apiData = ajax('https://todos-api-dev.herokuapp.com/todos').pipe(
+    const apiData = ajax('https://todos-api-dev.herokuapp.com/todoss').pipe(
       retry(3),  
       map(res => {
         if (!res.response) {
