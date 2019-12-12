@@ -24,7 +24,7 @@ export class FormBuilderComponent implements OnInit {
       city: [''],
       state: [''],
       zip: ['']
-    }),
+    })
   });
 
   onSubmit() {
