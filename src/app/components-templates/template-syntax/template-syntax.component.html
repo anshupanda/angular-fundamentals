@@ -166,7 +166,7 @@
   </div>
   <div class="form-group">
     <label for="name">Name: {{ name.value }}
-      <input class="form-control" name="name" #name="ngModel" required minlength="4" [(ngModel)]="currentHero.name">
+      <input class="form-control" name="name" [(ngModel)]="currentHero.name" #name="ngModel" required minlength="4" >
     </label>
 
     <div><pre>{{ name.errors | json }}</pre></div>
@@ -182,6 +182,8 @@
   </div>
   <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
 </form>
+
+
 
 
 
