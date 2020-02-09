@@ -84,6 +84,7 @@ export class ObservablesDemoComponent implements OnInit {
         observer.next(4);
         observer.complete();
       }, 1000);
+      observer.next(5);
     });
 
     customObservable.subscribe({
