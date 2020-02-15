@@ -9,6 +9,8 @@ import { ColorChangeService } from '../color-change.service';
 })
 export class ColorfulTextComponent implements OnInit {
 
+  color: string = 'blue';
+
   constructor(private colorChangeService: ColorChangeService) { }
 
   ngOnInit() {
@@ -17,6 +19,6 @@ export class ColorfulTextComponent implements OnInit {
     );
   }
 
-  color: string = 'blue';
+  
 
 }
